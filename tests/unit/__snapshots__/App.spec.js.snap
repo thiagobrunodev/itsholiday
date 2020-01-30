@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  id="app"
+>
+  <a
+    href="/"
+  >
+    <h1
+      class="brand-name"
+    >
+      it's holiday.
+    </h1>
+  </a>
+   
+  <form
+    autocomplete="off"
+    class="main-params"
+    spellcheck="false"
+  >
+    <!---->
+     
+    <input
+      hidden="hidden"
+      type="submit"
+      value=""
+    />
+  </form>
+   
+  <!---->
+   
+  <p
+    class="credits"
+  >
+    <a
+      href="http://github.com/thiaguz/itsholiday"
+      title="Repository of this project"
+    >
+      Made with 💙
+    </a>
+     by
+    
+    <a
+      href="https://thiaguz.github.io/"
+      title="My website"
+    >
+      Thiago B. Vieira
+    </a>
+    
+    using 
+    <a
+      href="https://vuejs.org/"
+      title="Vue.Js"
+    >
+      Vue
+    </a>
+     and
+    
+    <a
+      href="https://date.nager.at/"
+      title="Worldwide Public Holidays - Nager.Date"
+    >
+      Nager.Date
+    </a>
+    , art from 
+    <a
+      href="https://undraw.co/"
+      title="unDraw"
+    >
+      unDraw
+    </a>
+  </p>
+</div>
+`;
