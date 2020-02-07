@@ -15,6 +15,39 @@
 
 <script>
 export default {
+    metaInfo: {
+        title: "It's Holiday",
+        meta: [
+            { 'http-equiv': 'Content-Type', content: 'text/html; charset=utf-8' },
+            { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+            { name: 'description', content: 'Show all national holidays.' },
+
+            // OpenGraph data (Most widely used)
+            { property: 'og:title', content: 'It\'s Holiday' },
+            { property: 'og:site_name', content: 'It\'s Holiday' },
+            // The list of types is available here: http://ogp.me/#types
+            { property: 'og:type', content: 'website' },
+            // Should the the same as your canonical link, see below.
+            { property: 'og:url', content: 'https://itsholiday.now.sh/' },
+            // Often the same as your meta description, but not always.
+            { property: 'og:description', content: 'Show all national holidays.' },
+
+            // Twitter card
+            { name: 'twitter:card', content: 'summary' },
+            { name: 'twitter:site', content: 'https://itsholiday.now.sh/' },
+            { name: 'twitter:title', content: 'It\'s Holiday' },
+            { name: 'twitter:description', content: 'Show all national holidays.' },
+            // Your twitter handle, if you have one.
+            { name: 'twitter:creator', content: '@thiguz' },
+
+            // Google / Schema.org markup:
+            { itemprop: 'name', content: 'It\'s Holiday' },
+            { itemprop: 'description', content: 'Show all national holidays.' },
+        ],
+        link: [
+            { rel: 'canonical', href: 'https://itsholiday.now.sh/' },
+        ],
+    },
     components: {
         ParamsInput: () => import('@/components/ParamsInput'),
     },

@@ -1,0 +1,5 @@
+User-Agent: *
+Disallow:
+Allow: /
+
+Sitemap: http://itsholiday.now.sh/sitemap.xml
