@@ -13,6 +13,7 @@
                 title="Just letters"
                 class="country-input"
                 autocomplete="off"
+                autofocus
             />
             <input hidden type="text" name="country" id="country" :value="bestMatchCountry.key">
             <div v-if="countryInput && matchedCountries && matchedCountries.length > 1" class="country-dropdown">
