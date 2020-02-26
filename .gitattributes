@@ -1,2 +1,18 @@
-[core]
-	autocrlf = false
+# Autodetect text files
+* text=auto
+
+# Definitively text files
+*.txt text
+*.json text
+*.js text
+*.vue text
+*.svg text
+*.xml text
+*.webmanifest text
+*.html text
+
+# Ensure those won't be messed up with
+*.jpg binary
+*.png binary
+*.ico binary
+*.data binary
