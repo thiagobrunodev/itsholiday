@@ -5,6 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "postbuild": "node scripts/postbuild",
     "test:unit": "vue-cli-service test:unit --detectOpenHandles",
     "lint": "vue-cli-service lint"
   },
@@ -25,9 +26,13 @@
   "dependencies": {
     "axios": "^0.19.2",
     "axios-cache-adapter": "^2.5.0",
+    "chrome-aws-lambda": "^2.1.1",
+    "chrome-finder": "^1.0.6",
     "core-js": "^3.6.4",
     "jest-serializer-vue": "^2.0.2",
+    "mime-types": "^2.1.26",
     "normalize.css": "^8.0.1",
+    "puppeteer-core": "^2.1.1",
     "vue": "^2.6.11",
     "vue-carousel": "^0.18.0",
     "vue-meta": "^2.3.2",
