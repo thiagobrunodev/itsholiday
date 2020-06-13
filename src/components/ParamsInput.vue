@@ -4,7 +4,7 @@
             <input
                 placeholder="Select a country"
                 :value="countryInput"
-                @input="evt=>countryInput=evt.target.value"
+                @input="evt => (countryInput = evt.target.value)"
                 @focus="clearCountryInput"
                 ref="countryInput"
                 pattern="[A-Za-z].{2,}"
@@ -15,8 +15,11 @@
                 autocomplete="off"
                 autofocus
             />
-            <input hidden type="text" name="country" id="country" :value="bestMatchCountry.key">
-            <div v-if="countryInput && matchedCountries && matchedCountries.length > 1" class="country-dropdown">
+            <input hidden type="text" name="country" id="country" :value="bestMatchCountry.key" />
+            <div
+                v-if="countryInput && matchedCountries && matchedCountries.length > 1"
+                class="country-dropdown"
+            >
                 <ul class="matched-country-list">
                     <li
                         class="matched-country"
@@ -24,7 +27,7 @@
                         :key="matchedCountry.key"
                         v-on:click="setBestMatchCountry(matchedCountry)"
                     >
-                        {{matchedCountry.value}}
+                        {{ matchedCountry.value }}
                     </li>
                 </ul>
             </div>
@@ -39,8 +42,8 @@
                 name="year"
                 id="year"
                 ref="yearInput"
-                min=2000
-                max=2100
+                min="2000"
+                max="2100"
             />
         </div>
     </div>
@@ -56,13 +59,20 @@ export default {
             this.matchedCountries = null;
         });
 
-        api.get('/AvailableCountries').then((res) => {
-            if (typeof res.data === typeof []) {
-                this.countryDictionary = res.data;
-            }
-        }).catch(() => {
-            // Trigger error page
-        });
+        api.get('/AvailableCountries')
+            .then((res) => {
+                if (typeof res.data === typeof []) {
+                    this.countryDictionary = res.data;
+                }
+
+                const countryInRoute = this.countryDictionary.filter((country) => country.key.includes(this.$route.params.country))[0];
+                if (countryInRoute) {
+                    this.setBestMatchCountry(countryInRoute);
+                }
+            })
+            .catch((err) => {
+                console.error(err);
+            });
     },
     watch: {
         countryInput() {
@@ -77,7 +87,7 @@ export default {
         clearCountryInput(event) {
             if (!event) return;
             if (this.bestMatchCountry.key !== undefined) {
-                this.bestMatchCountry = { };
+                this.bestMatchCountry = {};
                 this.countryInput = '';
             }
         },
@@ -89,7 +99,9 @@ export default {
                 this.countryInput = country.value;
                 this.$refs.yearInput.focus();
                 this.$refs.countryInput.disabled = true;
-                setTimeout(() => { this.$refs.countryInput.disabled = false; }, 500);
+                setTimeout(() => {
+                    this.$refs.countryInput.disabled = false;
+                }, 500);
                 return;
             }
             this.bestMatchCountry = country;

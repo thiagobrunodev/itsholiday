@@ -6,14 +6,14 @@ Vue.use(VueRouter);
 
 const routes = [
     {
-        path: '/',
-        name: 'home',
-        component: Home,
-    },
-    {
         path: '/:country/:year',
         name: 'holidays',
         component: () => import('@/views/Holidays.vue'),
+    },
+    {
+        path: '*',
+        name: 'home',
+        component: Home,
     },
 ];
 
